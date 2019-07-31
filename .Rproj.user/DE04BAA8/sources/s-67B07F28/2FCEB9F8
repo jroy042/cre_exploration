@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1564414996939.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1506475276",
+    "id" : "2FCEB9F8",
+    "lastKnownWriteTime" : 1564415015,
+    "last_content_update" : 1564415015590,
+    "path" : "/data/Dropbox/current projects/cre_exploration/basic_app.R",
+    "project_path" : "basic_app.R",
+    "properties" : {
+        "cursorPosition" : "12,20",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

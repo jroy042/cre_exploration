@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1564157885008.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2579689180",
+    "id" : "1A28D748",
+    "lastKnownWriteTime" : 1564178266,
+    "last_content_update" : 1564178266615,
+    "path" : "~/Dropbox/current projects/cre_exploration/analysis.R",
+    "project_path" : "analysis.R",
+    "properties" : {
+        "cursorPosition" : "11,0",
+        "scrollLine" : "0",
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

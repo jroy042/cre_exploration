@@ -1,0 +1,11 @@
+library(tidyverse)
+library(readxl)
+library(mgcv)
+library(visreg)
+
+
+negs = read_excel("negative_code.xlsx")
+negs %>% filter(variant != "/") %>% mutate(variant_y = ifelse(variant=="D",1,0)) -> negs
+
+gam1 = gam(variant_y ~ s(date)+relationship, family="binomial", data=negs)
+

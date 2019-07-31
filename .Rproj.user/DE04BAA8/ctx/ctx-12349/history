@@ -1,0 +1,188 @@
+library(shinydashboard)
+shiny::runApp()
+library(tidyverse)
+library(readxl)
+library(mgcv)
+negs = read_excel("negative_code.xlsx")
+warnings()
+View(negs)
+View(negs)
+negs = read_excel("negative_code.xlsx")
+View(negs)
+warnings()
+unique(negs$variant)
+negs %>% filter(variant != "/") -> negs
+gam1 = gam(variant ~ s(date)+relationship, family="binomial")
+gam1 = gam(variant ~ s(date)+relationship, family="binomial", data=negs)
+negs = read_excel("negative_code.xlsx")
+negs %>% filter(variant != "/") %>% mutate(response = ifelse(variant=="D",1,0)) -> negs
+negs %>% filter(variant != "/") %>% mutate(variant_y = ifelse(variant=="D",1,0)) -> negs
+gam1 = gam(variant_y ~ s(date)+relationship, family="binomial", data=negs)
+summary(gam1)
+library(visreg)
+install.packages("visreg")
+library(visreg)
+visreg(gam1,"date")
+?visreg
+visreg(gam1,"date", scale = "response")
+visreg(gam1,"date", by="relationship",scale = "response")
+install.packages("tidyverse","readxl","visreg")
+install.packages("tidyverse")
+library(tidyverse)
+library(readxl)
+library(mgcv)
+library(visreg)
+install.packages("httr")
+install.packages("tidyverse")
+library(tidyverse)
+library(readxl)
+library(mgcv)
+library(visreg)
+install.packages("visreg")
+negs = read_excel("negative_code.xlsx")
+negs %>% filter(variant != "/") %>% mutate(variant_y = ifelse(variant=="D",1,0)) -> negs
+View(negs)
+install.packages(c("shiny","shinydashboard"))
+shiny::runApp()
+runApp()
+runApp()
+runApp()
+runApp()
+gam1 = gam(variant_y ~ s(date)+relationship, family="binomial", data=negs)
+View(gam1)
+saveRDS("gam1.rds")
+saveRDS("gam1", file="gam1.rds")
+log1 = glm(variant_y~date+relationship)
+log1 = glm(variant_y~date+relationship, family="binomial",data=negs)
+nonlinear <- visreg(gam1,  scale='response', "date", line.par = list(col = 'red'), plot=FALSE)
+linear <- visreg(log1,  scale='response', "date", plot = FALSE)
+dplyr::bind_rows(
+dplyt::mutate(nonlinear$fit, plt = "GAM"),
+dplyr::mutate(nonlinear$fit, plt = "Logistic")
+) -> fits
+nonlinear <- visreg(gam1,  scale='response', "date", line.par = list(col = 'red'), plot=FALSE)
+linear <- visreg(log1,  scale='response', "date", plot = FALSE)
+dplyr::bind_rows(
+dplyr::mutate(nonlinear$fit, plt = "GAM"),
+dplyr::mutate(nonlinear$fit, plt = "Logistic")
+) -> fits
+library(visreg)
+nonlinear <- visreg(gam1,  scale='response', "date", line.par = list(col = 'red'), plot=FALSE)
+linear <- visreg(log1,  scale='response', "date", plot = FALSE)
+dplyr::bind_rows(
+dplyr::mutate(nonlinear$fit, plt = "GAM"),
+dplyr::mutate(nonlinear$fit, plt = "Logistic")
+) -> fits
+ggplot() +
+geom_ribbon(
+data = fits,
+aes(date, ymin=visregLwr, ymax=visregUpr, group=plt), fill="gray90"
+) +
+geom_line(data = fits, aes(date, visregFit, group=plt, color=plt)) +
+theme_bw()
+dplyr::bind_rows(
+dplyr::mutate(nonlinear$fit, plt = "GAM"),
+dplyr::mutate(linear$fit, plt = "Logistic")
+) -> fits
+ggplot() +
+geom_ribbon(
+data = fits,
+aes(date, ymin=visregLwr, ymax=visregUpr, group=plt), fill="gray90"
+) +
+geom_line(data = fits, aes(date, visregFit, group=plt, color=plt)) +
+theme_bw()
+ggplot() +
+geom_ribbon(
+data = fits,
+aes(date, ymin=visregLwr, ymax=visregUpr, group=plt), fill="gray90"
+) +
+geom_line(data = fits, aes(date, visregFit, group=plt, color=plt)) +
+ylab("P(DO)")+
+xlab("Date") +
+theme_bw()
+ggplot() +
+geom_ribbon(
+data = fits,
+aes(date, ymin=visregLwr, ymax=visregUpr, group=plt), fill="gray90"
+) +
+geom_line(data = fits, aes(date, visregFit, group=plt, color=plt)) +
+ylab("P(DO vs Inversion)")+
+xlab("Date") +
+theme_bw()
+logdevexp = 1 - log1$deviance / log1$null.deviance
+logdevexp
+summary(gam1)
+runApp()
+dplyr::bind_rows(
+dplyr::mutate(nonlinear$fit, plt = "GAM"),
+dplyr::mutate(linear$fit, plt = "Logistic")
+) -> fits
+ggplot() +
+geom_ribbon(
+data = fits,
+aes(date, ymin=visregLwr, ymax=visregUpr, group=plt), fill="gray90"
+) +
+geom_line(data = fits, aes(date, visregFit, group=plt, color=plt)) +
+ylab("P(DO vs Inversion)")+
+xlab("Date") +
+theme_bw() + theme(legend.title="model")
+?element_text
+?legend.title
+??legend.title
+dplyr::bind_rows(
+dplyr::mutate(nonlinear$fit, plt = "GAM"),
+dplyr::mutate(linear$fit, plt = "Logistic")
+) -> fits
+ggplot() +
+geom_ribbon(
+data = fits,
+aes(date, ymin=visregLwr, ymax=visregUpr, group=plt), fill="gray90"
+) +
+geom_line(data = fits, aes(date, visregFit, group=plt, color=plt)) +
+ylab("P(DO vs Inversion)")+
+xlab("Date") +
+theme_bw() + scale_fill_manual(name="Model")
+ggplot() +
+geom_ribbon(
+data = fits,
+aes(date, ymin=visregLwr, ymax=visregUpr, group=plt), fill="gray90"
+) +
+geom_line(data = fits, aes(date, visregFit, group=plt, color=plt)) +
+ylab("P(DO vs Inversion)")+
+xlab("Date") +
+theme_bw() + guides(group=guide_legend(title="Model"))
+ggplot() +
+geom_ribbon(
+data = fits,
+aes(date, ymin=visregLwr, ymax=visregUpr, group=plt), fill="gray90"
+) +
+geom_line(data = fits, aes(date, visregFit, group=plt, color=plt)) +
+ylab("P(DO vs Inversion)")+
+xlab("Date") +
+theme_bw() + guides(fill=guide_legend(title="Model"))
+dplyr::bind_rows(
+dplyr::mutate(nonlinear$fit, plt = "GAM"),
+dplyr::mutate(linear$fit, plt = "Logistic")
+) -> fits
+ggplot() +
+geom_ribbon(
+data = fits,
+aes(date, ymin=visregLwr, ymax=visregUpr, group=plt), fill="gray90"
+) +
+geom_line(data = fits, aes(date, visregFit, group=plt, color=plt)) +
+ylab("P(DO vs Inversion)")+
+xlab("Date") +
+theme_bw() + labs(group="Model")
+dplyr::bind_rows(
+dplyr::mutate(nonlinear$fit, Model = "GAM"),
+dplyr::mutate(linear$fit, Model = "Logistic")
+) -> fits
+ggplot() +
+geom_ribbon(
+data = fits,
+aes(date, ymin=visregLwr, ymax=visregUpr, group=Model), fill="gray90"
+) +
+geom_line(data = fits, aes(date, visregFit, group=Model, color=Model)) +
+ylab("P(DO vs Inversion)")+
+xlab("Date") +
+theme_bw()

@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1564414337774.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1683284844",
+    "id" : "C8FD4C36",
+    "lastKnownWriteTime" : 1564428390,
+    "last_content_update" : 1564428390098,
+    "path" : "/data/Dropbox/current projects/cre_exploration/app.R",
+    "project_path" : "app.R",
+    "properties" : {
+        "cursorPosition" : "11,15",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

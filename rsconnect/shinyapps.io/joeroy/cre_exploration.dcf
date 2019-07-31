@@ -1,0 +1,10 @@
+name: cre_exploration
+title:
+username:
+account: joeroy
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1061521
+bundleId: 2280898
+url: https://joeroy.shinyapps.io/cre_exploration/
+when: 1564600829.54311
